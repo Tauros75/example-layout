@@ -1,0 +1,116 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    font-size: $font-med;
+    color: $grayishBlue;
+    line-height: 1.3;
+
+    &.dontScroll {
+        overflow: hidden;
+    }
+}
+
+h1, h2, h3 {
+    margin-top: 0px;
+}
+
+// Links
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+// Spacing
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+
+    &-pall {
+        padding-top: 36px;
+        padding-right: 24px;
+        padding-bottom: 36px;
+        padding-left: 24px;
+    }
+
+    &-py {
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+
+    &-px {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+    &-pt {
+        padding-top: 36px;
+    }
+
+    &-pr {
+        padding-right: 24px;
+    }
+
+    &-pb {
+        padding-bottom: 36px;
+    }
+
+    &-pl {
+        padding-left: 24px;
+    }
+}
+
+// Flexbox
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+// Buttons
+button, .button {
+    display: inline-block;
+    padding: 14px 30px;
+    background: linear-gradient(to right, $limeGreen, $brightCyan);
+    border: 0;
+    border-radius: 20px;
+    font-size: $font-sml;
+    color: $white;
+    cursor: pointer;
+    transition: opacity 300ms ease-in-out;
+
+    &:hover {
+        opacity: 0.75;
+    }
+}
+
+// Visibility
+.hide-for-mobile {
+    @include breakpoints-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoints-up(large) {
+        display: none;
+    }
+}
